@@ -1,14 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package naivebayesclassifier;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  *
@@ -61,13 +56,8 @@ public class DataReader
             for (int j = 0; j < list.get(i).length; j++)
             {
                 tmp[i][j] = list.get(i)[j];
-//                    System.out.print(tmp[i][j] + " ");
             }
-//                System.out.println("");
         }
-//        System.out.println("");
-//        System.out.println("");
-//        System.out.println("");
         return tmp;
     }
 }

@@ -16,24 +16,24 @@ import java.util.Random;
 public class NaiveBayesClassifier
 {
 
-    private float[][] tst = new float[][]{
-        {2,4,2,1,4},
-        {1,2,1,1,2},
-        {9,7,10,7,4},
-        {4,4,10,10,2}
-    };
+//    private float[][] tst = new float[][]{
+//        {2,4,2,1,4},
+//        {1,2,1,1,2},
+//        {9,7,10,7,4},
+//        {4,4,10,10,2}
+//    };
+//    
+//    private float[][] trn = new float[][]{
+//        {1,3,1,1,2},
+//        {10,3,2,1,2},
+//        {2,3,1,1,2},
+//        {10,9,7,1,4},
+//        {3,5,2,2,4},
+//        {2,3,1,1,4},
+//    };
     
-    private float[][] trn = new float[][]{
-        {1,3,1,1,2},
-        {10,3,2,1,2},
-        {2,3,1,1,2},
-        {10,9,7,1,4},
-        {3,5,2,2,4},
-        {2,3,1,1,4},
-    };
-    
-//    private float[][] tst;
-//    private float[][] trn;
+    private float[][] tst;
+    private float[][] trn;
     
     private ArrayList<Integer> ds = new ArrayList<>();
     private HashMap<Integer, Integer> decisionOccurances = new HashMap<>();
@@ -62,15 +62,15 @@ public class NaiveBayesClassifier
     public NaiveBayesClassifier()
     {
         DataReader dr = new DataReader();
-//        try
-//        {
-//            tst = dr.readArray("australian_TST.txt");
-//            trn = dr.readArray("australian_TRN.txt");
-//        }
-//        catch(Exception e)
-//        {
-//            System.exit(0);
-//        }
+        try
+        {
+            tst = dr.readArray("australian_TST.txt");
+            trn = dr.readArray("australian_TRN.txt");
+        }
+        catch(Exception e)
+        {
+            System.exit(0);
+        }
         
         decisions = new int[tst.length];
         setPossibleDecisions();
